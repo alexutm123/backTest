@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Открытие приложения</title>
+    <script>
+      function openApp() {
+        window.location.href = "myapp://";
+        setTimeout(function () {
+          window.location.href = "https://yourwebsite.com/download"; // Если приложение не установлено
+        }, 2000);
+      }
+    </script>
+  </head>
+  <body onload="openApp()">
+    <p>Если приложение не открылось, <a href="myapp://">нажмите здесь</a>.</p>
+  </body>
+</html>
