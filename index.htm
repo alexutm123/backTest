@@ -10,8 +10,10 @@
             const code = params.get("code");
 
             if (code) {
+                document.getElementById("codeDisplay").innerText = "Ваш код: " + code;
                 window.location.href = `myapp://auth/twitch?code=${code}`;
             } else {
+                document.getElementById("codeDisplay").innerText = "Код не найден!";
                 window.location.href = "https://yourwebsite.com/download";
             }
         }
@@ -20,6 +22,8 @@
     </script>
 </head>
 <body>
+    <h1>Открытие приложения</h1>
+    <p id="codeDisplay">Ждём код...</p>
     <p>Если приложение не открылось, <a href="#" onclick="openApp()">нажмите здесь</a>.</p>
 </body>
 </html>
