@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Открытие приложения</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Перенаправление...</title>
     <script>
-        function openApp() {
-            const params = new URLSearchParams(window.location.search);
-            const code = params.get("code");
+      window.onload = function () {
+        // Получаем code из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get("code");
 
-            if (code) {
-                document.getElementById("codeDisplay").innerText = "Ваш код: " + code;
-                window.location.href = `myapp://auth/twitch?code=${code}`;
-            } else {
-                document.getElementById("codeDisplay").innerText = "Код не найден!";
-            }
+        if (code) {
+          // Показываем код на экране
+          document.body.innerHTML = "<h2>Полученный code: " + code + "</h2>";
+
+          // Немедленный редирект в приложение
+          window.location.href = "myapp://signUpProvider?code=" + code;
+        } else {
+          document.body.innerHTML = "<h2>Ошибка: Код не найден</h2>";
         }
-
-
+      };
     </script>
-</head>
-<body>
-    <h1>Открытие приложения</h1>
-    <p id="codeDisplay">Ждём код...</p>
-    <p>Если приложение не открылось, <a href="#" onclick="openApp()">нажмите здесь</a>.</p>
-</body>
+  </head>
+  <body>
+    <p>Перенаправление в приложение...</p>
+  </body>
 </html>
