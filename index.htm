@@ -15,7 +15,7 @@
           document.body.innerHTML = "<h2>Полученный code: " + code + "</h2>";
 
           // Немедленный редирект в приложение
-          window.location.href = "myapp://signUpProvider?code=" + code;
+          window.location.replace("myapp://signUpProvider?code=" + code);
         } else {
           document.body.innerHTML = "<h2>Ошибка: Код не найден</h2>";
         }
