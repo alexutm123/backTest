@@ -15,7 +15,7 @@
           document.body.innerHTML = "<h2>Полученный code: " + code + "</h2>";
 
           // Немедленный редирект в приложение
-          window.location.replace("myapp://?code=" + code + "&twitch=true");
+          window.location.replace("myapp://phoneNumber?code=" + code + "&twitch=true");
         } else {
           document.body.innerHTML = "<h2>Ошибка: Код не найден</h2>";
         }
