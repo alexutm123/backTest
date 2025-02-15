@@ -16,7 +16,7 @@
           document.body.innerHTML = "<h2>Полученный code: " + code + "</h2>" + urlParams.toString();
 
           // Немедленный редирект в приложение
-          window.location.replace("myapp://signUpProvider?code=" + code + "&twitch=true");
+          window.location.replace("myapp://phoneNumber?code=" + code + "&twitch=true");
         } else {
           window.location.replace("myapp://signUpProvider");
         }
