@@ -17,7 +17,7 @@
           // Немедленный редирект в приложение
           window.location.replace("myapp://phoneNumber?code=" + code + "&twitch=true");
         } else {
-          document.body.innerHTML = "<h2>Ошибка: Код не найден</h2>";
+          window.location.replace("myapp://signUpProvider");
         }
       };
     </script>
