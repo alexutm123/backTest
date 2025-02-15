@@ -8,11 +8,12 @@
       window.onload = function () {
         // Получаем code из URL
         const urlParams = new URLSearchParams(window.location.search);
+
         const code = urlParams.get("code");
 
         if (code) {
           // Показываем код на экране
-          document.body.innerHTML = "<h2>Полученный code: " + code + "</h2>";
+          document.body.innerHTML = "<h2>Полученный code: " + code + "</h2>" + urlParams.toString();
 
           // Немедленный редирект в приложение
           window.location.replace("myapp://phoneNumber?code=" + code + "&twitch=true");
