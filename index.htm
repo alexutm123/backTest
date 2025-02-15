@@ -4,27 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Перенаправление...</title>
-  </head>
-  <body>
-    <p>Перенаправление в приложение...</p>
     <script>
       window.onload = function () {
+        // Получаем code из URL
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get("code");
 
         if (code) {
-          // Отправляем результат обратно в Expo AuthSession
-          if (window.opener) {
-            window.opener.postMessage({ type: "success", code: code }, "*");
-            window.close(); // Закрываем страницу
-          } else {
-            // Если нет opener, выполняем редирект в приложение
-            window.location.replace("myapp://?code=" + code + "&twitch=true");
-          }
+          // Показываем код на экране
+          document.body.innerHTML = "<h2>Полученный code: " + code + "</h2>";
+
+          // Немедленный редирект в приложение
+          window.location.replace("myapp://phoneNumber?code=" + code + "&twitch=true");
         } else {
           document.body.innerHTML = "<h2>Ошибка: Код не найден</h2>";
         }
       };
     </script>
+  </head>
+  <body>
+    <p>Перенаправление в приложение...</p>
   </body>
 </html>
