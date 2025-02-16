@@ -3,19 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Перенаправление...</title>
+    <title>Redirecting...</title>
     <script>
       window.onload = function () {
-        // Получаем code из URL
         const urlParams = new URLSearchParams(window.location.search);
-
         const code = urlParams.get("code");
-
         if (code) {
-          // Показываем код на экране
-          document.body.innerHTML = "<h2>Полученный code: " + code + "</h2>" + urlParams.toString();
-
-          // Немедленный редирект в приложение
           window.location.replace("myapp://phoneNumber?code=" + code + "&twitch=true");
         } else {
           window.location.replace("myapp://signUpProvider");
@@ -24,6 +17,6 @@
     </script>
   </head>
   <body>
-    <p>Перенаправление в приложение...</p>
+    <p>Redirecting to the app...</p>
   </body>
 </html>
