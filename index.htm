@@ -9,7 +9,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get("code");
         if (code) {
-          window.location.replace("myapp://signUpProvider?code=" + code + "&twitch=true");
+          window.location.replace("myapp://phoneNumber?code=" + code + "&twitch=true");
         } else {
           window.location.replace("myapp://signUpProvider");
         }
