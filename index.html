@@ -13,6 +13,7 @@
         const code = urlParams.get("code");
         if (code) {
           document.getElementById("code").innerHTML = code;
+          debugger
           window.location.replace("myapp://?code=" + code + "&twitch=true");
         } else {
           window.location.replace("myapp://");
