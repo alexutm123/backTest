@@ -5,16 +5,16 @@
   <title>Redirecting...</title>
 </head>
 <body>
-  <p>Нажмите кнопку, чтобы открыть приложение</p>
-  <button id="openApp">Открыть приложение</button>
+  <p>Переадресация на приложение...</p>
   
   <script>
-    document.getElementById('openApp').addEventListener('click', () => {
+    (function() {
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get('code');
       const appUrl = code ? `myapp://?code=${code}` : 'myapp://';
-      window.location = appUrl;
-    });
+      // Переход
+      window.location.href = appUrl;
+    })();
   </script>
 </body>
 </html>
