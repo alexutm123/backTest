@@ -6,21 +6,5 @@
   <title>Переадресация...</title>
 </head>
 <body>
-  <p>Переадресация на приложение...</p>
-
-  <a id="redirectLink" href="#" style="display: none;">Open App</a>
-
-  <script>
-    (function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const code = urlParams.get('code');
-      const appUrl = code ? `myapp://?code=${code}` : 'myapp://';
-
-      // Устанавливаем правильную ссылку и имитируем клик
-      const link = document.getElementById('redirectLink');
-      link.setAttribute('href', appUrl);
-      link.click();
-    })();
-  </script>
 </body>
 </html>
